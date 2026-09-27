@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #333;
+}
+
+#connectBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#connectBtn:hover {
+    background-color: #0056b3;
+}
+
+#status {
+    color: #ff4c4c;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #4da6ff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Motor Butonları (D-Pad Tasarımı) */
+.motor-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.motor-controls .row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-motor {
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    user-select: none; /* Metin seçimini engeller */
+}
+
+.btn-motor:active { background-color: #555; }
+.btn-motor.stop { background-color: #dc3545; font-weight: bold; }
+.btn-motor.stop:active { background-color: #a71d2a; }
+
+/* Servo Kontrolleri */
+.servo-controls label {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.servo-controls input {
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Sensör verileri */
+.sensor-data p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+hr {
+    border-color: #333;
+    margin: 15px 0;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Araç Kontrol Paneli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Araç Kontrol Merkezi</h1>
+            <button id="connectBtn">USB Bağlan</button>
+            <span id="status">Bağlantı Bekleniyor...</span>
+        </header>
+
+        <div class="grid">
+            <!-- Motor Kontrolü -->
+            <div class="card">
+                <h2>Motor Kontrolü (W-A-S-D)</h2>
+                <div class="motor-controls">
+                    <div class="row">
+                        <button id="btnForward" class="btn-motor">İleri (W)</button>
+                    </div>
+                    <div class="row">
+                        <button id="btnLeft" class="btn-motor">Sol (A)</button>
+                        <button id="btnStop" class="btn-motor stop">DUR</button>
+                        <button id="btnRight" class="btn-motor">Sağ (D)</button>
+                    </div>
+                    <div class="row">
+                        <button id="btnBackward" class="btn-motor">Geri (S)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servo Kontrolü -->
+            <div class="card">
+                <h2>Servo Motorlar</h2>
+                <div class="servo-controls">
+                    <label>Servo 1: <span id="srv1-val">90</span>°</label>
+                    <input type="range" min="0" max="180" value="90" oninput="updateServo(1, this.value)">
+                    
+                    <label>Servo 2: <span id="srv2-val">90</span>°</label>
+                    <input type="range" min="0" max="180" value="90" oninput="updateServo(2, this.value)">
+                    
+                    <label>Servo 3: <span id="srv3-val">90</span>°</label>
+                    <input type="range" min="0" max="180" value="90" oninput="updateServo(3, this.value)">
+                    
+                    <label>Servo 4: <span id="srv4-val">90</span>°</label>
+                    <input type="range" min="0" max="180" value="90" oninput="updateServo(4, this.value)">
+                    
+                    <label>Servo 5: <span id="srv5-val">90</span>°</label>
+                    <input type="range" min="0" max="180" value="90" oninput="updateServo(5, this.value)">
+                    
+                    <label>Servo 6: <span id="srv6-val">90</span>°</label>
+                    <input type="range" min="0" max="180" value="90" oninput="updateServo(6, this.value)">
+                </div>
+            </div>
+
+            <!-- Sensör Verileri -->
+            <div class="card">
+                <h2>Canlı Sensör Verileri</h2>
+                <div class="sensor-data">
+                    <p>🌡️ Sıcaklık 1 (T1): <strong id="t1-val">--</strong> °C</p>
+                    <p>🌡️ Sıcaklık 2 (T2): <strong id="t2-val">--</strong> °C</p>
+                    <p>🌡️ Sıcaklık 3 (T3): <strong id="t3-val">--</strong> °C</p>
+                    <hr>
+                    <p>📐 İvme X: <strong id="accx-val">--</strong></p>
+                    <p>📐 İvme Y: <strong id="accy-val">--</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
